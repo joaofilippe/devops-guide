@@ -100,7 +100,7 @@ Para facilitar a comunicação, o.
 
 ```text
 - chore: atualização da biblioteca
-- chore: configuração do Jenkis
+- chore: configuração do Jenkins
 ```
 
 - Importante observar que somente commits com prefixos `feat` ou `fix` irão representar alterações nas funcionalidades do aplicativo;
