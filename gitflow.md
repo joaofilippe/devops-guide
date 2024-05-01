@@ -2,7 +2,7 @@
 
 ## Branch Naming
 
-**Long-Running Branches**:
+### Long-Running Branches
 
 São as branchs que possuem tempo de vida permanente no código. São branchs caracterizadas por sua perenidade.
 
@@ -26,7 +26,7 @@ Essas branches também serão caracterizadas por um nível maior de proteção. 
   - Será responsável por conter uma ou mais features em estado de teste;
   - O ambiente de testes será simulado;
 
-**Short-Lived Branches**:
+### Short-Lived Branches
 
 São branchs com um tempo de vida definido. Seu ciclo de vida é não perene, devendo sempre ser excluídas após atingido seus respectivos objetivos.
 
