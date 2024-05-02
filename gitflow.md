@@ -41,11 +41,16 @@ Serão caracterizadas pela sua não proteção em relação a modificações.
   - O objetivo é corrigir um erro em produção;
   - A correção deverá ser replicada para as branches `homologation` e `developer` após a finalização;
 - **Bugfix**:
+  - Criada a partir da `homologation` ou da `develop`;
+  - Responsável por corrigir código que não estão em ambiente de produção;
 - **Features**:
 
 *caso o idioma escolhido seja o portugues* As branchs deverão ser iniciadas com o nome do propósito da branch.
 
 *caso idioma escolhido seja o inglês*.
+
+- O nome sempre deverá vir acompanhado do tipo de branch (*hotfix, bugfix* ou *feature*);
+- Deverá ser separado por uma barra `/`, o que vai ajudar na organização das branches, visto que vários editores de código e servidores de GIT, incluso o Azure Devops, utilizam .
 
 #### Examples
 
@@ -60,8 +65,8 @@ bugfix/button_color
 ```
 
 ```text
-feature/water_sensor
-feature/button_color
+feat/water_sensor
+feat/button_color
 ```
 
 ## Conventional Commits
