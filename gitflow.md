@@ -47,6 +47,23 @@ Serão caracterizadas pela sua não proteção em relação a modificações.
 
 *caso idioma escolhido seja o inglês*.
 
+#### Examples
+
+```text
+hotfix/water_sensor
+hotfix/button_color
+```
+
+```text
+bugfix/water_sensor
+bugfix/button_color
+```
+
+```text
+feature/water_sensor
+feature/button_color
+```
+
 ## Conventional Commits
 
 Links para consulta:
