@@ -49,6 +49,10 @@ Serão caracterizadas pela sua não proteção em relação a modificações.
 
 *caso idioma escolhido seja o inglês*.
 
+![alt text](image-2.png)
+
+![alt text](image.png)
+
 - O nome sempre deverá vir acompanhado do tipo de branch (*hotfix, bugfix* ou *feature*);
 - Deverá ser separado por uma barra `/`, o que vai ajudar na organização das branches, visto que vários editores de código e servidores de GIT, incluso o Azure Devops, utilizam .
 
