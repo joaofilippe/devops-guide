@@ -23,7 +23,9 @@ Cada merge de uma nova alteração desencadeia uma série de atividades que ser�
     - É a etapa de compilação de um artefato que possa ser executado em um ambiente voltado para os testes;
     - Nessa etapa é importante se assegurar que variáveis de ambiente, secrets, conexões e demais aspectos estejam configurados corretamente;
 3. **Test**:
-    - É a etapa responsável por assegurar a qualidade e segurança do teste
+    - É a etapa responsável por assegurar a qualidade e segurança do aplicativo;
+    - Serão realizados vários tipos de teste;
+    - É muito importante que o fracasso do teste seja reportado e documentado para posterior correção;
 
 - Todo o nosso fluxo atual é feito manualmente;
 - A essência do CI é a automação. No futuro nós poderemos utilizar programas específicos, como o Jenkins;
@@ -108,18 +110,15 @@ Todas essas branches deverão ser excluídas após a finalização.
   - Criada a partir da `homologation` ou da `develop`;
   - O objetivo é corrigir erros que ainda não estão em ambiente de produção;
   - Responsável por corrigir código que não estão em ambiente de produção;
-  - A correção final deverá ser replicada na branch `develop` e nas `features`
+  - A correção final deverá ser replicada na branch `develop` e nas `features`;
 - **Feature**:
   - Serão branches criadas a partir da `develop`;
   - Serão responsáveis por carregar novas alterações no código;
   - Deverão ser mergeadas sempre na `develop`;
 
+> Esporadicamente, poderemos criar outros tipos de branches, para adequar às mudanças necessárias ou para marcar versões especificas do código;
+
 - **Release**: será responsável por implementar features já prontas nas branchs `main/master` e `homologation`;
-
-*caso o idioma escolhido seja o portugues* As branchs deverão ser iniciadas com o nome do propósito da branch.
-
-*caso idioma escolhido seja o inglês*.
-
 - O nome sempre deverá vir acompanhado do tipo de branch (*hotfix, bugfix* ou *feature*);
 - Deverá ser separado por uma barra `/`, o que vai ajudar na organização das branches, visto que vários editores de código e servidores de GIT utilizam para separar as branches em pastas:
 
@@ -230,3 +229,25 @@ Links úteis:
   - Prover detalhes nos comentários sobre a observação;
   - Fornecer caminhos sobre como o dev pode corrigir determinado problema;
   - O *reviwer* deverá ter em mente que pessoas programam diferente;
+
+## Versionamento
+
+Frequentemente iremos precisar consultar versões antigas do código, seja para reintroduzir uma funcionalidade descontinuada, seja para impedir que um comportamento não desejado continue em produção.
+
+A estratégia que vai ser utilizada primeiramente, é a criação de branchs com o prefixo `version` e em seguida nomear com o número da versão cabível.
+
+Futuramente, poderemos estar estudando o uso de tags no Github.
+
+O formato será X.Y.Z (1.0.2, 2.0.0, 2.1.0, 2.1.12);
+
+É a partir desse código que iremos produzir os nossos apks.
+
+Essas branches serão como se fossem uma "fotografia" da `main` ou `homologation` num dado momento do código.
+
+![alt text](assets/semver.png)
+
+### Versionamento Semântico
+
+1. MAJOR: irá ocorrer quando as alterações criarem uma incompatibilidade com o código, dessa forma iremos mudar o algorismo representado por X - Ex.: 1.2.3 -> 2.0.0;
+2. MINOR: irá ocorrer quando as alterações não criarem uma incompatibilidade com o código atual, muda-se apenas o algorimos representado por Y - Ex.: 1.2.3 -> 1.3.0;
+3. PATCH: irá ocorrer em casos de atualização de segurança e correção de bugs. Muda-se o último algorismo, representado por Z - Ex.: 1.2.3 -> 1.2.4;
