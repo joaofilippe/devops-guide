@@ -127,21 +127,23 @@ Todas essas branches deverão ser excluídas após a finalização.
 
 ![alt text](/assets/vscode.png)
 
+- No nome da branch, deve-se utilizar o **número do ticket** aberto no Azure;
+
 #### Examples
 
 ```text
-hotfix/sensor_afogamento
-hotfix/cor_botao
+hotfix/1415_sensor_afogamento
+hotfix/6865_cor_botao
 ```
 
 ```text
-bugfix/sensor_trator
-bugfix/cor_botao
+bugfix/2889-sensor_trator
+bugfix/4565-cor_botao
 ```
 
 ```text
-feat/sensor_afogamento
-feat/cor_botao
+feat/6545-sensor_afogamento
+feat/6465-cor_botao
 ```
 
 ![Diagrama para Gilflow](./assets/gitflow.jpg)
