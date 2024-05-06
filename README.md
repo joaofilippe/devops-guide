@@ -16,13 +16,13 @@ Cada merge de uma nova alteração desencadeia uma série de atividades que ser�
 
 ## Etapas do CI
 
-1. Code:
+1. **Code**:
     - É a etapa dedicada à produção das alterações no código;
     - Nela o dev irá realizar a implementação das task;
-2. Build:
+2. **Build**:
     - É a etapa de compilação de um artefato que possa ser executado em um ambiente voltado para os testes;
     - Nessa etapa é importante se assegurar que variáveis de ambiente, secrets, conexões e demais aspectos estejam configurados corretamente;
-3. Test:
+3. **Test**:
     - É a etapa responsável por assegurar a qualidade e segurança do teste
 
 - Todo o nosso fluxo atual é feito manualmente;
