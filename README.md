@@ -82,7 +82,7 @@ feat/sensor_afogamento
 feat/cor_botao
 ```
 
-![Diagrama para Gilflow](gitflow.jpg)
+![Diagrama para Gilflow](./assets/gitflow.jpg)
 
 ## Conventional Commits
 
