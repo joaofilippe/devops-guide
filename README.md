@@ -1,8 +1,67 @@
-# GitFlow
+# Continuous Integration
 
-## Branch
+**Links úteis**:
 
-### Long-Running Branches
+- <https://docs.flutter.dev/deployment/cd#cicd-options>;
+- <https://www.alura.com.br/artigos/flutter-ci-cd>
+- <https://pedrohjmartins.medium.com/smoke-testing-dfcd62903648>;
+
+Consiste no conjunto de estratégias para facilitar e dar segurança aos merges (integração). Um fluxo robusto de CI possibilita a realização mais frequente de merges no código, com mais segurança e mais tranquilidade.
+
+Além disso, um CI requer frequência na realização de *feedbacks* entre os desenvolvedores, seja para comunicar a realização de alguma das etapas, seja para reportar erros.
+
+Cada merge de uma nova alteração desencadeia uma série de atividades que serão responsáveis por verificar o impacto daquela alteração.
+
+![alt text](image-1.png)
+
+## Etapas do CI
+
+1. Code:
+    - É a etapa dedicada à produção das alterações no código;
+    - Nela o dev irá realizar a implementação das task;
+2. Build:
+    - É a etapa de compilação de um artefato que possa ser executado em um ambiente voltado para os testes;
+    - Nessa etapa é importante se assegurar que variáveis de ambiente, secrets, conexões e demais aspectos estejam configurados corretamente;
+3. Test:
+    - É a etapa responsável por assegurar a qualidade e segurança do teste
+
+- Todo o nosso fluxo atual é feito manualmente;
+- A essência do CI é a automação. No futuro nós poderemos utilizar programas específicos, como o Jenkins;
+- É recomendável que se produza sempre alguma análise (bloco de notas, OneNote, Notion, Word), por menor que seja, de cada etapa;
+
+## Testes
+
+**1. Smoke Test:**
+
+- É um tipo de teste geralmente realizado por QA's;
+- Também pode estar inserido em um fluxo automatizado;
+- Visa detectar se as funcionalidades mais essenciais e críticas estão feitas;
+- É como se fosse um pré-teste;
+
+**2. Unit Test:**
+
+- Os testes unitários são responsáveis por garantir a validade de cada método criado/alterado, evitando que retornos inesperados sejam dados;
+
+**3. Integration Test:**
+
+- Tratam da aplicação de uma foram mais holística;
+- Verificam a integração das funções;
+- É por meio dele que se pode ter a certeza que um fluxo está operacional;
+- Ele garante que o transporte de dados esteja acontecendo funcionalmenteç
+
+**4. Testes de admissibilidade**:
+
+- São testes responsáveis pela admissão da alteração;
+- Podem incluir aspectos de UI, UX, logs, performance e demais aspectos;
+- Podem variar conforme cada feature;
+
+----
+
+## GitFlow
+
+### Branch
+
+#### Long-Running Branches
 
 São as branchs que possuem tempo de vida permanente no código. São branchs caracterizadas por sua perenidade.
 
@@ -29,7 +88,7 @@ Essas branches também serão caracterizadas por um nível maior de proteção. 
   - Será responsável por conter uma ou mais features em estado de teste;
   - O ambiente de testes será simulado;
 
-### Short-Lived Branches
+#### Short-Lived Branches
 
 São branchs com um tempo de vida definido. Seu ciclo de vida é não perene, devendo sempre ser excluídas após atingido seus respectivos objetivos.
 
@@ -51,7 +110,9 @@ Todas essas branches deverão ser excluídas após a finalização.
   - Responsável por corrigir código que não estão em ambiente de produção;
   - A correção final deverá ser replicada na branch `develop` e nas `features`
 - **Feature**:
-  - Serão branches criadas a partir da `develop`
+  - Serão branches criadas a partir da `develop`;
+  - Serão responsáveis por carregar novas alterações no código;
+  - Deverão ser mergeadas sempre na `develop`;
 
 - **Release**: será responsável por implementar features já prontas nas branchs `main/master` e `homologation`;
 
@@ -84,7 +145,7 @@ feat/cor_botao
 
 ![Diagrama para Gilflow](./assets/gitflow.jpg)
 
-## Conventional Commits
+### Conventional Commits
 
 Links para consulta:
 
@@ -103,7 +164,7 @@ Para facilitar a comunicação, o.
 |**docs**| Tudo relacionado a documentação|
 |**chore**| Tudo relacionado à manutenção do código|
 
-### Exemplos de commits
+#### Exemplos de commits
 
 ```text
 - feat: altera a cor do botão
@@ -143,7 +204,7 @@ Para facilitar a comunicação, o.
 - Importante observar que somente commits com prefixos `feat` ou `fix` irão representar alterações nas funcionalidades do aplicativo;
 - Os demais prefixos não podem alterar nenhuma funcionalidade do código, caso eles o façam, é um grande indicativo que o commit não está suficientemente localizado em funcionalidade específica do código.
 
-## Pull Request
+### Pull Request
 
 Links úteis:
 
