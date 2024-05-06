@@ -62,9 +62,9 @@ Todas essas branches deverão ser excluídas após a finalização.
 - O nome sempre deverá vir acompanhado do tipo de branch (*hotfix, bugfix* ou *feature*);
 - Deverá ser separado por uma barra `/`, o que vai ajudar na organização das branches, visto que vários editores de código e servidores de GIT utilizam para separar as branches em pastas:
 
-![alt text](./assets/image-2.png)
+![alt text](./assets/azure.png)
 
-![alt text](./assets/image.png)
+![alt text](./assets/vscode.png)
 
 #### Examples
 

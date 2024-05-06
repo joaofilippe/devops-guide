@@ -57,11 +57,11 @@ Cada merge de uma nova alteração desencadeia uma série de atividades que ser�
 
 ----
 
-## GitFlow
+# GitFlow
 
-### Branch
+## Branch
 
-#### Long-Running Branches
+### Long-Running Branches
 
 São as branchs que possuem tempo de vida permanente no código. São branchs caracterizadas por sua perenidade.
 
@@ -88,7 +88,7 @@ Essas branches também serão caracterizadas por um nível maior de proteção. 
   - Será responsável por conter uma ou mais features em estado de teste;
   - O ambiente de testes será simulado;
 
-#### Short-Lived Branches
+### Short-Lived Branches
 
 São branchs com um tempo de vida definido. Seu ciclo de vida é não perene, devendo sempre ser excluídas após atingido seus respectivos objetivos.
 
@@ -123,8 +123,9 @@ Todas essas branches deverão ser excluídas após a finalização.
 - O nome sempre deverá vir acompanhado do tipo de branch (*hotfix, bugfix* ou *feature*);
 - Deverá ser separado por uma barra `/`, o que vai ajudar na organização das branches, visto que vários editores de código e servidores de GIT utilizam para separar as branches em pastas:
 
-![alt text](/assets/image-2.png)
-![alt text](./assets/image.png)
+![alt text](./assets/azure.png)
+
+![alt text](/assets/vscode.png)
 
 #### Examples
 
@@ -145,7 +146,7 @@ feat/cor_botao
 
 ![Diagrama para Gilflow](./assets/gitflow.jpg)
 
-### Conventional Commits
+## Conventional Commits
 
 Links para consulta:
 
@@ -204,7 +205,7 @@ Para facilitar a comunicação, o.
 - Importante observar que somente commits com prefixos `feat` ou `fix` irão representar alterações nas funcionalidades do aplicativo;
 - Os demais prefixos não podem alterar nenhuma funcionalidade do código, caso eles o façam, é um grande indicativo que o commit não está suficientemente localizado em funcionalidade específica do código.
 
-### Pull Request
+## Pull Request
 
 Links úteis:
 
