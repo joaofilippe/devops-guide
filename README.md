@@ -12,7 +12,7 @@ Além disso, um CI requer frequência na realização de *feedbacks* entre os de
 
 Cada merge de uma nova alteração desencadeia uma série de atividades que serão responsáveis por verificar o impacto daquela alteração.
 
-![alt text](image-1.png)
+![alt text](assets/gitflow.jpg)
 
 ## Etapas do CI
 
