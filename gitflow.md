@@ -1,6 +1,6 @@
 # GitFlow
 
-## Branch Naming
+## Branch
 
 ### Long-Running Branches
 
@@ -15,14 +15,17 @@ Essas branches também serão caracterizadas por um nível maior de proteção. 
 - **Main/Master**:
   - Será uma branch com uma versão estável do código;
   - Frequentemente estará atrás da branch `staging`;
+  - Ela terá um código pronto para uso;
   - É a versão que estará em produção;
 - **Homologation**:
   - Será uma branch com uma versão estável do código;
-  - Estará a frente da `main/master`;
+  - Frequentemente estará a frente da `main/master`;
   - Apenas features aprovadas poderão estar presentes na branch;
-  - Estará no ambiente de produção para testes;
+  - Ela também será caracterizada por ser um código pronto, porém que ainda não está em produção;
+  - Estará no ambiente de produção, porém para testes;
 - **Developer**:
   - Será uma branch com uma versão menos estável do código;
+  - Será a versão mais atualizada do código;
   - Será responsável por conter uma ou mais features em estado de teste;
   - O ambiente de testes será simulado;
 
@@ -32,9 +35,11 @@ São branchs com um tempo de vida definido. Seu ciclo de vida é não perene, de
 
 Em sua essência, não são responsáveis por representar nenhum ambiente.
 
-Diferentemente das branches `long-running`, elas serão atualizadas via *commits* diretos e via merge.
+Diferentemente das branches `long-running`, elas serão atualizadas via *commits* diretos e via merge quando houver alteração nas branches `main/master, homologation, develop`.
 
 Serão caracterizadas pela sua não proteção em relação a modificações.
+
+Todas essas branches deverão ser excluídas após a finalização.
 
 - **Hotfix**:
   - Criada a partir da branch `master/main`;
@@ -42,29 +47,34 @@ Serão caracterizadas pela sua não proteção em relação a modificações.
   - A correção deverá ser replicada para as branches `homologation` e `developer` após a finalização;
 - **Bugfix**:
   - Criada a partir da `homologation` ou da `develop`;
+  - O objetivo é corrigir erros que ainda não estão em ambiente de produção;
   - Responsável por corrigir código que não estão em ambiente de produção;
-- **Features**:
+  - A correção final deverá ser replicada na branch `develop` e nas `features`
+- **Feature**:
+  - Serão branches criadas a partir da `develop`
+
+- **Release**: será responsável por implementar features já prontas nas branchs `main/master` e `homologation`;
 
 *caso o idioma escolhido seja o portugues* As branchs deverão ser iniciadas com o nome do propósito da branch.
 
 *caso idioma escolhido seja o inglês*.
 
+- O nome sempre deverá vir acompanhado do tipo de branch (*hotfix, bugfix* ou *feature*);
+- Deverá ser separado por uma barra `/`, o que vai ajudar na organização das branches, visto que vários editores de código e servidores de GIT utilizam para separar as branches em pastas:
+
 ![alt text](image-2.png)
 
 ![alt text](image.png)
 
-- O nome sempre deverá vir acompanhado do tipo de branch (*hotfix, bugfix* ou *feature*);
-- Deverá ser separado por uma barra `/`, o que vai ajudar na organização das branches, visto que vários editores de código e servidores de GIT, incluso o Azure Devops, utilizam .
-
 #### Examples
 
 ```text
-hotfix/water_sensor
-hotfix/button_color
+hotfix/sensor_afogamento
+hotfix/cor_botao
 ```
 
 ```text
-bugfix/water_sensor
+bugfix/sensor_trator
 bugfix/button_color
 ```
 
@@ -131,3 +141,27 @@ Para facilitar a comunicação, o.
 
 - Importante observar que somente commits com prefixos `feat` ou `fix` irão representar alterações nas funcionalidades do aplicativo;
 - Os demais prefixos não podem alterar nenhuma funcionalidade do código, caso eles o façam, é um grande indicativo que o commit não está suficientemente localizado em funcionalidade específica do código.
+
+## Pull Request
+
+Links úteis:
+
+- <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/best-practices-for-pull-requests>;
+- <https://devdynamics.ai/blog/pull-request-best-practices-in-2023/>
+
+É o principal meio de comunicação de alteração no código e o que irá possibilitar que as novas features sejam testadas sob um outro olhar.
+
+- Todos os PRs deverão indicar o número do Ticket no board do time;
+- Todos os PRs deverão conter ao menos um *reviewer*;
+- Os códigos deverão conter testes e instruções de como realizá-los;
+
+- Para o *submiter*:
+  - O título do PR deverá ser breve;
+  - O corpo do PR deverá conter um breve histórico da implementação e detalhes que ajudem a revisão.
+  - Também é interessante apontar justificativas para a escolha da estratégia.
+  - O PR deverá descrever como o revisor irá testar a funcionalidade e quais os retornos esperados.
+
+- Para o *reviewer*:
+  - Prover detalhes nos comentários sobre a observação;
+  - Fornecer caminhos sobre como o dev pode corrigir determinado problema;
+  - O *reviewr* deverá ter em mente que pessoas programam diferente;
